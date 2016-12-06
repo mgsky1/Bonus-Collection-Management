@@ -100,10 +100,10 @@ public partial class Login : System.Web.UI.Page
         client.Host = "smtp.163.com";//使用163的SMTP服务器发送邮件
         client.UseDefaultCredentials = true;
         client.DeliveryMethod = System.Net.Mail.SmtpDeliveryMethod.Network;
-        client.Credentials = new System.Net.NetworkCredential("18596800037", "zzzz368711");//163的SMTP服务器需要用163邮箱的用户名和密码作认证，如果没有需要去163申请个,
+        client.Credentials = new System.Net.NetworkCredential("yourEmailName", "yourEmailPwd");//163的SMTP服务器需要用163邮箱的用户名和密码作认证，如果没有需要去163申请个,
         //这里假定你已经拥有了一个163邮箱的账户，用户名为abc，密码为*******
         System.Net.Mail.MailMessage Message = new System.Net.Mail.MailMessage();
-        Message.From = new System.Net.Mail.MailAddress("18596800037@163.com");
+        Message.From = new System.Net.Mail.MailAddress("yourEmail");
         Message.To.Add(mail);//将邮件发送给邮箱
         Message.Subject = "密码";
         Message.Body = pwd;
